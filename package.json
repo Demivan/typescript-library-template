@@ -1,0 +1,47 @@
+{
+  "type": "commonjs",
+  "author": {
+    "name": "Ivan Demchuk",
+    "email": "ivan.demchuk@gmail.com",
+    "url": "https://demivan.me"
+  },
+  "license": "MIT",
+  "exports": {
+    "production": {
+      "require": "./dist/prod/index.js",
+      "default": "./dist/prod/index.mjs"
+    },
+    "require": "./dist/index.js",
+    "default": "./dist/index.mjs"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "vitest",
+    "build": "tsup",
+    "lint": "eslint .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config-ts": "^0.25.2",
+    "c8": "^7.11.3",
+    "eslint": "^8.18.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "release-it": "^14.14.3",
+    "release-it-lerna-changelog": "^4.0.1",
+    "tsup": "^6.1.2",
+    "typescript": "^4.7.4",
+    "vitest": "^0.16.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.ts?(x)": "eslint --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@antfu/eslint-config-ts"
+    ]
+  }
+}
